@@ -1,6 +1,6 @@
 ﻿$Title = "Connection settings for vCD"
 $Author = "Alan Renouf"
-$Version = 1.0
+$Version = 1.1
 
 # Start of Settings 
 # Please Specify the IP address or Hostname of the vCD Instance to connect to
@@ -33,5 +33,7 @@ Write-CustomOut "Collecting OrgVDC Objects"
 $OrgvDC = Get-OrgvDC
 Write-CustomOut "Collecting ProviderVDC Objects"
 $ProviderVDC = Get-ProviderVdc
+Write-CustomOut "Collecting Host Objects"
+$CIHost = Search-Cloud -QueryType Host | Sort Name
 
 $Server = $CIServer
